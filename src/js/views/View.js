@@ -10,6 +10,7 @@ export default class View {
    * @returns {undefined | string} A markup string is returned if render=false
    * @this {Object} View instance
    * @author Noah Clark
+   * @todo Finish implementation
    */
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
@@ -48,7 +49,7 @@ export default class View {
       // Updates changed ATTRIBUES
       if (!newEl.isEqualNode(curEl))
         Array.from(newEl.attributes).forEach(attr =>
-          curEl.setAttribute(attr.name, attr.value)
+          curEl.setAttribute(attr.name, attr.value),
         );
     });
   }
