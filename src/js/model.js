@@ -3,6 +3,12 @@ import { API_URL, RES_PER_PAGE, KEY } from './config.js';
 // import { getJSON, sendJSON } from './helper.js';
 import { AJAX } from './helper.js';
 
+if (!KEY || KEY === '<YOUR_KEY>') {
+  throw new Error(
+    'Missing API key in src/js/config.js. Set KEY to your Forkify API key.',
+  );
+}
+
 export const state = {
   recipe: {},
   search: {
